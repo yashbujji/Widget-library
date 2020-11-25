@@ -1,0 +1,51 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { SideNavBarItem } from '../SideNavBarItem'
+import { SideNavBarSubItem } from '../SideNavBarSubItem'
+import { Home as HomeIcon, Settings as SettingsIcon } from '@material-ui/icons'
+
+<Meta title="SideNavBar/Item" />
+
+# SideNavBar Item
+
+<Story name="Basic">
+    <SideNavBarItem icon={<HomeIcon />} text={`Home`} />
+</Story>
+
+<Story name="Active">
+    <SideNavBarItem icon={<HomeIcon />} text={`Home`} active />
+</Story>
+
+<Story name="WithSubItems">
+    <SideNavBarItem icon={<SettingsIcon />} text={`Admin`}>
+    <SideNavBarSubItem text={`Users`} />
+    <SideNavBarSubItem text={`System`} />
+  </SideNavBarItem>
+</Story>
+
+<Story name="ExpandSubItemsOnItemClickEnabled">
+    <SideNavBarItem icon={<SettingsIcon />} text={`Admin`} showSubItemsOnClick>
+    <SideNavBarSubItem text={`Users`} />
+    <SideNavBarSubItem text={`System`} />
+  </SideNavBarItem>
+</Story>
+
+<Story name="ShowSubItemsOnStart">
+    <SideNavBarItem icon={<SettingsIcon />} text={`Admin`} showSubItemsOnStart>
+    <SideNavBarSubItem text={`Users`} />
+    <SideNavBarSubItem text={`System`} />
+  </SideNavBarItem>
+</Story>
+
+<Story name="ActiveWithSubItems">
+    <SideNavBarItem active icon={<SettingsIcon />} text={`Admin`}>
+    <SideNavBarSubItem text={`Users`} />
+    <SideNavBarSubItem text={`System`} />
+  </SideNavBarItem>
+</Story>
+
+<Story name="WithActiveSubItem">
+    <SideNavBarItem icon={<SettingsIcon />} text={`Admin`} showSubItemsOnStart>
+    <SideNavBarSubItem text={`Users`} active />
+    <SideNavBarSubItem text={`System`} />
+  </SideNavBarItem>
+</Story>

@@ -1,0 +1,42 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import SideNavBar from '../SideNavBar'
+import { SideNavBarItem } from '../SideNavBarItem'
+import { SideNavBarSubItem } from '../SideNavBarSubItem'
+import { Home as HomeIcon, Settings as SettingsIcon } from '@material-ui/icons'
+
+<Meta title="SideNavBar" />
+
+lets begin with writing story
+
+### Hover on the item to see its hover state.
+
+<Story name="Basic">
+    <SideNavBar>
+    <SideNavBarItem text={`Home`} icon={<HomeIcon />} active />
+    <SideNavBarItem
+      icon={<SettingsIcon />}
+      text={`Admin`}
+      showSubItemsOnStart
+      showSubItemsOnClick
+    >
+      <SideNavBarSubItem text={`Users`} />
+      <SideNavBarSubItem text={`System`} />
+    </SideNavBarItem>
+  </SideNavBar>
+</Story>
+
+<Story name="Collapsed">
+<SideNavBar collapsed>
+    <SideNavBarItem text={`Home`} icon={<HomeIcon />} />
+    <SideNavBarItem
+      icon={<SettingsIcon />}
+      text={`Admin`}
+      showSubItemsOnStart
+      showSubItemsOnClick
+      active
+    >
+      <SideNavBarSubItem text={`Users`} />
+      <SideNavBarSubItem text={`System`} />
+    </SideNavBarItem>
+  </SideNavBar>
+</Story>
